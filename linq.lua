@@ -1171,4 +1171,14 @@ function linq:foreach(func)
 	until index == nil
 end
 
+function _each(it)
+	local value, index = it()
+	return index, value
+end
+
+-- Allows you to: for k, v in x:each() do
+function linq:each()
+	return _each, self()
+end
+
 return linq
