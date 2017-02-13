@@ -81,6 +81,13 @@ print("Testing count function with anonymous function...")
 seq = linq.range(1, 10)
 print("Number of odd numbers in [1, 10]: " .. tostring(seq:count(function(x) return x % 2 == 1 end)))
 
+-- Test :each() loop
+print("Testing :each() loop...")
+local arr = linq { 1, 2, 3, 4 }
+for k, v in arr:each() do
+	print(k, v)
+end
+
 -- Test count function with string lambda
 print("Testing count function with string lambda...")
 print("Number of even numbers in [1, 10]: " .. tostring(seq:count("v % 2 == 0")))
